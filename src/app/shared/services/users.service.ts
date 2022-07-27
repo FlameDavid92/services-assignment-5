@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
-import { UsersActionsCounter } from './users-actions-counter.service';
+import { UsersActionsCounterService } from './users-actions-counter.service';
 
 @Injectable({ providedIn: 'root' })
 export class UsersService {
   activeUsers = ['Max', 'Anna'];
   inactiveUsers = ['Chris', 'Manu'];
 
-  constructor(private usersActionsCounter: UsersActionsCounter) {}
+  constructor(private usersActionsCounter: UsersActionsCounterService) {}
 
   setToInactive(id: number) {
     this.inactiveUsers.push(this.activeUsers[id]);

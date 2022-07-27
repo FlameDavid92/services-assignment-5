@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UsersActionsCounterModel } from './shared/models/users-actions-counter.model';
-import { UsersActionsCounter } from './shared/services/users-actions-counter.service';
+import { UsersActionsCounterService } from './shared/services/users-actions-counter.service';
 
 @Component({
   selector: 'my-app',
@@ -10,9 +10,9 @@ import { UsersActionsCounter } from './shared/services/users-actions-counter.ser
 export class AppComponent implements OnInit {
   counters: UsersActionsCounterModel;
 
-  constructor(private usersActionsCounter: UsersActionsCounter) {}
+  constructor(private usersActionsCounterService: UsersActionsCounterService) {}
 
   ngOnInit(): void {
-    this.counters = this.usersActionsCounter.counters;
+    this.counters = this.usersActionsCounterService.counters;
   }
 }
